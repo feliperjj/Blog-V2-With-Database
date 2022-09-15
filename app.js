@@ -83,6 +83,7 @@ app.post("/posts/:postId/delete",function (req,res) {
   Post.findByIdAndRemove(deleteId,function (err,post) {
       if(err){
         console.log(err);
+        res.redirect("/");
       }else{
         console.log("Sucessfully removed");
         res.redirect("/");
